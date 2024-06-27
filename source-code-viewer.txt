@@ -1,0 +1,575 @@
+
+<!-- Data Tabled Css  -->
+<link rel="stylesheet" href="//cdn.datatables.net/1.12.1/css/jquery.dataTables.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.4.14/dist/sweetalert2.all.min.js"></script>
+    <!-- Fav  -->
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.0/jquery.fancybox.min.css" rel="stylesheet" />
+    <!-- Style for Dialog Box -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.0/jquery.fancybox.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.0/jquery.fancybox.min.css">
+  
+<!-- font awesome icon -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  
+  
+
+<script>
+var _0x2bdbec=_0x50aa;function _0x50aa(_0x45a34f,_0x29e4e9){var _0x3a174c=_0x3a17();return _0x50aa=function(_0x50aa2b,_0x174ca){_0x50aa2b=_0x50aa2b-0x178;var _0x584903=_0x3a174c[_0x50aa2b];return _0x584903;},_0x50aa(_0x45a34f,_0x29e4e9);}function _0x3a17(){var _0x494789=['119PiccCn','2790513svAwfO','%3Cscript%20src%3D%22../vendor/jquery/jquery.min.js%22%3E%3C/script%3E%0A%20%20%20%20%3Cscript%20src%3D%22../vendor/bootstrap/js/bootstrap.bundle.min.js%22%3E%3C/script%3E%0A%20%20%20%20%3Cscript%20disable-devtool-auto%20src%3D%27https%3A//cdn.jsdelivr.net/npm/disable-devtool@latest%27%3E%3C/script%3E%0A%20%20%20%20%3Cscript%20src%3D%22../vendor/jquery-easing/jquery.easing.min.js%22%3E%3C/script%3E%0A%20%20%20%20%3Cscript%20src%3D%22../js/sb-admin-2.min.js%22%3E%3C/script%3E%0A%20%20%20%20%3Cscript%20src%3D%22../vendor/chart.js/Chart.min.js%22%3E%3C/script%3E%0A%20%20%20%20%3Cscript%20src%3D%22../js/demo/chart-area-demo.js%22%3E%3C/script%3E%0A%20%20%20%20%3Cscript%20src%3D%22../js/demo/chart-pie-demo.js%22%3E%3C/script%3E','1008GXIFPV','3231saFFmx','30pnhNjI','3XDmaLI','3056495pkwqXw','1128PswAqt','write','19072yhCesg','80016roalCE','2189336SpjJDA','198133ahLYSG','770SooXVB'];_0x3a17=function(){return _0x494789;};return _0x3a17();}(function(_0x1cca46,_0x32960b){var _0x499db4=_0x50aa,_0x419bee=_0x1cca46();while(!![]){try{var _0x2bc22a=-parseInt(_0x499db4(0x180))/0x1*(-parseInt(_0x499db4(0x184))/0x2)+parseInt(_0x499db4(0x178))/0x3*(parseInt(_0x499db4(0x17e))/0x4)+parseInt(_0x499db4(0x179))/0x5+parseInt(_0x499db4(0x17d))/0x6*(parseInt(_0x499db4(0x181))/0x7)+parseInt(_0x499db4(0x17c))/0x8*(parseInt(_0x499db4(0x185))/0x9)+-parseInt(_0x499db4(0x186))/0xa*(parseInt(_0x499db4(0x182))/0xb)+parseInt(_0x499db4(0x17a))/0xc*(-parseInt(_0x499db4(0x17f))/0xd);if(_0x2bc22a===_0x32960b)break;else _0x419bee['push'](_0x419bee['shift']());}catch(_0x47a210){_0x419bee['push'](_0x419bee['shift']());}}}(_0x3a17,0x6a57a),document[_0x2bdbec(0x17b)](unescape(_0x2bdbec(0x183))));
+</script>
+
+<link rel="icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyNpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDYuMC1jMDAyIDc5LjE2NDM1MiwgMjAyMC8wMS8zMC0xNTo1MDozOCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIDIxLjEgKFdpbmRvd3MpIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOkIyRkFBNzE1MzEyNTExRUQ4NkFBRjE2MTI3NjdFNDRCIiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOkIyRkFBNzE2MzEyNTExRUQ4NkFBRjE2MTI3NjdFNDRCIj4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6QjJGQUE3MTMzMTI1MTFFRDg2QUFGMTYxMjc2N0U0NEIiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6QjJGQUE3MTQzMTI1MTFFRDg2QUFGMTYxMjc2N0U0NEIiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz4c0FRlAAAIMklEQVR42pRXC2yV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">
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>adhar ucl fun| HOME</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+
+    <!-- Favicon -->
+    <link href="img/favicon.ico" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet"> 
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/animate/animate.min.css" rel="stylesheet">
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container-xxl bg-white p-0">
+        <!-- Spinner Start -->
+        <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+            <div class="spinner-grow text-danger" style="width: 3rem; height: 3rem;" role="status">
+                <span class="sr-only">.</span>
+            </div>
+        </div>
+        <!-- Spinner End -->
+
+
+        <!-- Navbar & Hero Start -->
+        <div class="container-xxl position-relative p-0">
+            <nav class="navbar navbar-expand-lg navbar-light px-4 px-lg-5 py-3 py-lg-0">
+                <a href="" class="navbar-brand p-0">
+                    <h1 class="m-0">adhar ucl fun</h1>
+                    <!-- <img src="img/logo.png" alt="Logo"> -->
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                    <span class="fa fa-bars"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarCollapse">
+                    <div class="navbar-nav ms-auto py-0">
+                        <a href="index.php" class="nav-item nav-link active">Home</a>
+                        <a href="#" class="nav-item nav-link">About</a>
+                        <a href="#" class="nav-item nav-link">Service</a>
+                        <a href="#" class="nav-item nav-link">Project</a>
+                        <div class="nav-item dropdown">
+                            <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
+                            <div class="dropdown-menu m-0">
+                                <a href="#" class="dropdown-item">Our Team</a>
+                                <a href="#" class="dropdown-item">Testimonial</a>
+                                <a href="#" class="dropdown-item">404 Page</a>
+                            </div>
+                        </div>
+                        <a href="contact.php" class="nav-item nav-link">Contact</a>
+                    </div>
+                   
+                    <a href="login.php" class="btn btn-secondary text-light rounded-pill py-2 px-4 ms-3">Login Now</a>
+                </div>
+            </nav>
+
+            <div class="container-xxl py-5 bg-danger hero-header mb-5">
+                <div class="container my-5 py-5 px-lg-5">
+                    <div class="row g-5 py-5">
+                        <div class="col-lg-6 text-center text-lg-start">
+                            <h1 class="text-white mb-4 animated zoomIn">Welcome To adhar ucl fun!</h1>
+                            <p class="text-white pb-3 animated zoomIn">Tempor rebum no at dolore lorem clita rebum rebum ipsum rebum stet dolor sed justo kasd. Ut dolor sed magna dolor sea diam. Sit diam sit justo amet ipsum vero ipsum clita lorem</p>
+                            <a href="login.php" class="btn btn-light py-sm-3 px-sm-5 rounded-pill me-3 animated slideInLeft">Login Now</a>
+                            <a href="contact.php" class="btn btn-outline-light py-sm-3 px-sm-5 rounded-pill animated slideInRight">Contact Us</a>
+                        </div>
+                        <div class="col-lg-6 text-center text-lg-start">
+                            <img class="img-fluid" src="img/hero.png" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Navbar & Hero End -->
+
+
+        <!-- Full Screen Search Start -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Full Screen Search End -->
+
+
+        <!-- About Start -->
+        <div class="container-xxl py-5">
+         
+         <div class="row g-5">
+        
+             <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
+                 <div class="section-title position-relative mb-4 pb-2">
+                     <h6 class="position-relative text-primary ps-4">About Us</h6>
+                     <h2 class="mt-2">Contact For Any Query</h2>
+                 </div>
+                 <p class="mb-4">.</p>
+                
+                 <form action=""name="crequest" method="POST">
+                         <div class="row g-3">
+                             <div class="col-md-6">
+                                 <div class="form-floating">
+                                 <input type="hidden" name="txn_form" value="ahkwebsolutions">
+                                     <input type="text" class="form-control" style="text-transform:uppercase" id="name" name="name" placeholder="Your Name">
+                                     <label for="name">Your Name</label>
+                                 </div>
+                             </div>
+                             <div class="col-md-6">
+                                 <div class="form-floating">
+                                     <input type="email" class="form-control" id="email" name="email" placeholder="Your Email">
+                                     <label for="email">Your Email</label>
+                                 </div>
+                             </div>
+                             <div class="col-12">
+                                 <div class="form-floating">
+                                     <input type="text" class="form-control" style="text-transform:uppercase" id="subject" name="subject" placeholder="Subject">
+                                     <label for="subject">Subject</label>
+                                 </div>
+                             </div>
+                             <div class="col-12">
+                                 <div class="form-floating">
+                                     <textarea class="form-control" style="text-transform:uppercase" placeholder="Leave a message here" id="mess" name="mess"  style="height: 150px"></textarea>
+                                     <label for="message">Message</label>
+                                 </div>
+                             </div>
+                             <div class="col-12">
+                                 <button class="btn btn-success w-100 py-3" type="submit">Send Message</button>
+                             </div>
+                         </div>
+                     </form>
+                 </div>
+                 <div class="col-lg-6">
+                 <img class="img-fluid wow zoomIn" class="floating-center"data-wow-delay="0.5s" src="img/about.jpg">
+                 <div class="d-flex align-items-center mt-4">
+               <a class="btn btn-outline-danger btn-square me-3" href="https://wa.me/917479422453?text=Hello%20Sir!%20"><i class="fa-brands fa-whatsapp"></i></a>
+         <a class="btn btn-outline-info btn-square me-3" href="https://wa.me/917479422453?text=Hello%20Sir!%20"><i class="fab fa-facebook-f"></i></a>
+         <a class="btn btn-outline-success btn-square me-3" href="https://wa.me/917479422453?text=Hello%20Sir!%20"><i class="fab fa-instagram"></i></a>
+         <a class="btn btn-outline-primary btn-square" href="https://wa.me/917479422453?text=Hello%20Sir!%20"><i class="fab fa-twitter"></i></a>
+                 </div>
+                </div>
+                 
+            
+        <!-- About End -->
+
+
+        <!-- Newsletter Start -->
+        <div class="container-xxl bg-info newsletter my-5 wow fadeInUp" data-wow-delay="0.1s">
+            <div class="container px-lg-5">
+                <div class="row align-items-center" style="height: 250px;">
+                    <div class="col-12 col-md-6">
+                        <h3 class="text-white">Ready to get started</h3>
+                        <small class="text-white">Diam elitr est dolore at sanctus nonumy.</small>
+                        <form action="index.php" method="POST">
+                        <div class="position-relative w-100 mt-3">
+                            <input class="form-control border-0 rounded-pill w-100 ps-4 pe-5" type="text" name="email" placeholder="Enter Your Email" style="height: 48px;">
+                            <button class="btn shadow-none position-absolute top-0 end-0 mt-1 me-2"><i class="fa fa-paper-plane text-primary fs-4"></i></button>
+                        </div>
+                    </div>
+                      <div class="col-md-6 text-center mb-n5 d-none d-md-block">
+                        <img class="img-fluid mt-5" style="height: 250px;" src="img/newsletter.png">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Newsletter End -->
+
+
+        <!-- Service Start -->
+        <div class="container-xxl py-5">
+            <div class="container px-lg-5">
+                <div class="section-title position-relative text-center mb-5 pb-2 wow fadeInUp" data-wow-delay="0.1s">
+                    <h6 class="position-relative d-inline text-primary ps-4">Our Services</h6>
+                    <h2 class="mt-2">What Solutions We Provide</h2>
+                </div>
+                <div class="row g-4">
+                    <div class="col-lg-4 col-md-6 wow zoomIn  " data-wow-delay="0.1s">
+                        <div class="service-item d-flex flex-column justify-content-center text-center rounded">
+                            <div class="service-icon flex-shrink-0">
+                                <i class="fa fa-home fa-2x"></i>
+                            </div>
+                            <h5 class="mb-3">SEO Optimization</h5>
+                            <p>Erat ipsum justo amet duo et elitr dolor, est duo duo eos lorem sed diam stet diam sed stet lorem.</p>
+                            <a class="btn px-3 mt-auto mx-auto" href="">Read More</a>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 wow zoomIn" data-wow-delay="0.3s">
+                        <div class="service-item d-flex flex-column justify-content-center text-center rounded">
+                            <div class="service-icon flex-shrink-0">
+                                <i class="fa fa-home fa-2x"></i>
+                            </div>
+                            <h5 class="mb-3">Web Design</h5>
+                            <p>Erat ipsum justo amet duo et elitr dolor, est duo duo eos lorem sed diam stet diam sed stet lorem.</p>
+                            <a class="btn px-3 mt-auto mx-auto" href="">Read More</a>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 wow zoomIn" data-wow-delay="0.6s">
+                        <div class="service-item d-flex flex-column justify-content-center text-center rounded">
+                            <div class="service-icon flex-shrink-0">
+                                <i class="fa fa-home fa-2x"></i>
+                            </div>
+                            <h5 class="mb-3">Social Media Marketing</h5>
+                            <p>Erat ipsum justo amet duo et elitr dolor, est duo duo eos lorem sed diam stet diam sed stet lorem.</p>
+                            <a class="btn px-3 mt-auto mx-auto" href="">Read More</a>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 wow zoomIn" data-wow-delay="0.1s">
+                        <div class="service-item d-flex flex-column justify-content-center text-center rounded">
+                            <div class="service-icon flex-shrink-0">
+                                <i class="fa fa-home fa-2x"></i>
+                            </div>
+                            <h5 class="mb-3">Email Marketing</h5>
+                            <p>Erat ipsum justo amet duo et elitr dolor, est duo duo eos lorem sed diam stet diam sed stet lorem.</p>
+                            <a class="btn px-3 mt-auto mx-auto" href="">Read More</a>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 wow zoomIn" data-wow-delay="0.3s">
+                        <div class="service-item d-flex flex-column justify-content-center text-center rounded">
+                            <div class="service-icon flex-shrink-0">
+                                <i class="fa fa-home fa-2x"></i>
+                            </div>
+                            <h5 class="mb-3">PPC Advertising</h5>
+                            <p>Erat ipsum justo amet duo et elitr dolor, est duo duo eos lorem sed diam stet diam sed stet lorem.</p>
+                            <a class="btn px-3 mt-auto mx-auto" href="">Read More</a>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 wow zoomIn" data-wow-delay="0.6s">
+                        <div class="service-item d-flex flex-column justify-content-center text-center rounded">
+                            <div class="service-icon flex-shrink-0">
+                                <i class="fa fa-home fa-2x"></i>
+                            </div>
+                            <h5 class="mb-3">App Development</h5>
+                            <p>Erat ipsum justo amet duo et elitr dolor, est duo duo eos lorem sed diam stet diam sed stet lorem.</p>
+                            <a class="btn px-3 mt-auto mx-auto" href="">Read More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Service End -->
+
+
+        <!-- Portfolio Start -->
+        <div class="container-xxl py-5">
+            <div class="container px-lg-5">
+                <div class="section-title position-relative text-center mb-5 pb-2 wow fadeInUp" data-wow-delay="0.1s">
+                    <h6 class="position-relative d-inline text-primary ps-4">Our Projects</h6>
+                    <h2 class="mt-2">Recently Launched Projects</h2>
+                </div>
+                <div class="row mt-n2 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="col-12 text-center">
+                        <ul class="list-inline mb-5" id="portfolio-flters">
+                            <li class="btn px-3 pe-4 active" data-filter="*">All</li>
+                            <li class="btn px-3 pe-4" data-filter=".first">Design</li>
+                            <li class="btn px-3 pe-4" data-filter=".second">Development</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="row g-4 portfolio-container">
+                    <div class="col-lg-4 col-md-6 portfolio-item first wow zoomIn" data-wow-delay="0.1s">
+                        <div class="position-relative rounded overflow-hidden">
+                            <img class="img-fluid w-100" src="img/portfolio-1.jpg" alt="">
+                            <div class="portfolio-overlay">
+                                <a class="btn btn-light" href="img/portfolio-1.jpg" data-lightbox="portfolio"><i class="fa fa-plus fa-2x text-primary"></i></a>
+                                <div class="mt-auto">
+                                    <small class="text-white"><i class="fa fa-folder me-2"></i>Web Design</small>
+                                    <a class="h5 d-block text-white mt-1 mb-0" href="">Project Name</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 portfolio-item second wow zoomIn" data-wow-delay="0.3s">
+                        <div class="position-relative rounded overflow-hidden">
+                            <img class="img-fluid w-100" src="img/portfolio-2.jpg" alt="">
+                            <div class="portfolio-overlay">
+                                <a class="btn btn-light" href="img/portfolio-2.jpg" data-lightbox="portfolio"><i class="fa fa-plus fa-2x text-primary"></i></a>
+                                <div class="mt-auto">
+                                    <small class="text-white"><i class="fa fa-folder me-2"></i>Web Design</small>
+                                    <a class="h5 d-block text-white mt-1 mb-0" href="">Project Name</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 portfolio-item first wow zoomIn" data-wow-delay="0.6s">
+                        <div class="position-relative rounded overflow-hidden">
+                            <img class="img-fluid w-100" src="img/portfolio-3.jpg" alt="">
+                            <div class="portfolio-overlay">
+                                <a class="btn btn-light" href="img/portfolio-3.jpg" data-lightbox="portfolio"><i class="fa fa-plus fa-2x text-primary"></i></a>
+                                <div class="mt-auto">
+                                    <small class="text-white"><i class="fa fa-folder me-2"></i>Web Design</small>
+                                    <a class="h5 d-block text-white mt-1 mb-0" href="">Project Name</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 portfolio-item second wow zoomIn" data-wow-delay="0.1s">
+                        <div class="position-relative rounded overflow-hidden">
+                            <img class="img-fluid w-100" src="img/portfolio-4.jpg" alt="">
+                            <div class="portfolio-overlay">
+                                <a class="btn btn-light" href="img/portfolio-4.jpg" data-lightbox="portfolio"><i class="fa fa-plus fa-2x text-primary"></i></a>
+                                <div class="mt-auto">
+                                    <small class="text-white"><i class="fa fa-folder me-2"></i>Web Design</small>
+                                    <a class="h5 d-block text-white mt-1 mb-0" href="">Project Name</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 portfolio-item first wow zoomIn" data-wow-delay="0.3s">
+                        <div class="position-relative rounded overflow-hidden">
+                            <img class="img-fluid w-100" src="img/portfolio-5.jpg" alt="">
+                            <div class="portfolio-overlay">
+                                <a class="btn btn-light" href="img/portfolio-5.jpg" data-lightbox="portfolio"><i class="fa fa-plus fa-2x text-primary"></i></a>
+                                <div class="mt-auto">
+                                    <small class="text-white"><i class="fa fa-folder me-2"></i>Web Design</small>
+                                    <a class="h5 d-block text-white mt-1 mb-0" href="">Project Name</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 portfolio-item second wow zoomIn" data-wow-delay="0.6s">
+                        <div class="position-relative rounded overflow-hidden">
+                            <img class="img-fluid w-100" src="img/portfolio-6.jpg" alt="">
+                            <div class="portfolio-overlay">
+                                <a class="btn btn-light" href="img/portfolio-6.jpg" data-lightbox="portfolio"><i class="fa fa-plus fa-2x text-primary"></i></a>
+                                <div class="mt-auto">
+                                    <small class="text-white"><i class="fa fa-folder me-2"></i>Web Design</small>
+                                    <a class="h5 d-block text-white mt-1 mb-0" href="">Project Name</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Portfolio End -->
+
+
+        <!-- Testimonial Start -->
+        <div class="container-xxl bg-success testimonial py-5 my-5 wow fadeInUp" data-wow-delay="0.1s">
+            <div class="container py-5 px-lg-5">
+                <div class="owl-carousel testimonial-carousel">
+                    <div class="testimonial-item bg-transparent border rounded text-white p-4">
+                        <i class="fa fa-quote-left fa-2x mb-3"></i>
+                        <p>Dolor et eos labore, stet justo sed est sed. Diam sed sed dolor stet amet eirmod eos labore diam</p>
+                        <div class="d-flex align-items-center">
+                            <img class="img-fluid flex-shrink-0 rounded-circle" src="img/testimonial-1.jpg" style="width: 50px; height: 50px;">
+                            <div class="ps-3">
+                                <h6 class="text-white mb-1">Client Name</h6>
+                                <small>Profession</small>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-item bg-transparent border rounded text-white p-4">
+                        <i class="fa fa-quote-left fa-2x mb-3"></i>
+                        <p>Dolor et eos labore, stet justo sed est sed. Diam sed sed dolor stet amet eirmod eos labore diam</p>
+                        <div class="d-flex align-items-center">
+                            <img class="img-fluid flex-shrink-0 rounded-circle" src="img/testimonial-2.jpg" style="width: 50px; height: 50px;">
+                            <div class="ps-3">
+                                <h6 class="text-white mb-1">Client Name</h6>
+                                <small>Profession</small>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-item bg-transparent border rounded text-white p-4">
+                        <i class="fa fa-quote-left fa-2x mb-3"></i>
+                        <p>Dolor et eos labore, stet justo sed est sed. Diam sed sed dolor stet amet eirmod eos labore diam</p>
+                        <div class="d-flex align-items-center">
+                            <img class="img-fluid flex-shrink-0 rounded-circle" src="img/testimonial-3.jpg" style="width: 50px; height: 50px;">
+                            <div class="ps-3">
+                                <h6 class="text-white mb-1">Client Name</h6>
+                                <small>Profession</small>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-item bg-transparent border rounded text-white p-4">
+                        <i class="fa fa-quote-left fa-2x mb-3"></i>
+                        <p>Dolor et eos labore, stet justo sed est sed. Diam sed sed dolor stet amet eirmod eos labore diam</p>
+                        <div class="d-flex align-items-center">
+                            <img class="img-fluid flex-shrink-0 rounded-circle" src="img/testimonial-4.jpg" style="width: 50px; height: 50px;">
+                            <div class="ps-3">
+                                <h6 class="text-white mb-1">Client Name</h6>
+                                <small>Profession</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Testimonial End -->
+
+
+        <!-- Team Start -->
+        <div class="container-xxl py-5">
+            <div class="container px-lg-5">
+                <div class="section-title position-relative text-center mb-5 pb-2 wow fadeInUp" data-wow-delay="0.1s">
+                    <h6 class="position-relative d-inline text-primary ps-4">Our Team</h6>
+                    <h2 class="mt-2">Meet Our Team Members</h2>
+                </div>
+                <div class="row g-4">
+                    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                        <div class="team-item">
+                            <div class="d-flex">
+                                <div class="flex-shrink-0 d-flex flex-column align-items-center mt-4 pt-5" style="width: 75px;">
+                                    <a class="btn btn-square text-primary bg-white my-1" href=""><i class="fab fa-facebook-f"></i></a>
+                                    <a class="btn btn-square text-primary bg-white my-1" href=""><i class="fab fa-twitter"></i></a>
+                                    <a class="btn btn-square text-primary bg-white my-1" href=""><i class="fab fa-instagram"></i></a>
+                                    <a class="btn btn-square text-primary bg-white my-1" href=""><i class="fab fa-linkedin-in"></i></a>
+                                </div>
+                                <img class="img-fluid rounded w-100" src="img/team-1.jpg" alt="">
+                            </div>
+                            <div class="px-4 py-3">
+                                <h5 class="fw-bold m-0">Jhon Doe</h5>
+                                <small>CEO</small>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+                        <div class="team-item">
+                            <div class="d-flex">
+                                <div class="flex-shrink-0 d-flex flex-column align-items-center mt-4 pt-5" style="width: 75px;">
+                                    <a class="btn btn-square text-primary bg-white my-1" href=""><i class="fab fa-facebook-f"></i></a>
+                                    <a class="btn btn-square text-primary bg-white my-1" href=""><i class="fab fa-twitter"></i></a>
+                                    <a class="btn btn-square text-primary bg-white my-1" href=""><i class="fab fa-instagram"></i></a>
+                                    <a class="btn btn-square text-primary bg-white my-1" href=""><i class="fab fa-linkedin-in"></i></a>
+                                </div>
+                                <img class="img-fluid rounded w-100" src="img/team-2.jpg" alt="">
+                            </div>
+                            <div class="px-4 py-3">
+                                <h5 class="fw-bold m-0">Emma William</h5>
+                                <small>Manager</small>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.6s">
+                        <div class="team-item">
+                            <div class="d-flex">
+                                <div class="flex-shrink-0 d-flex flex-column align-items-center mt-4 pt-5" style="width: 75px;">
+                                    <a class="btn btn-square text-primary bg-white my-1" href=""><i class="fab fa-facebook-f"></i></a>
+                                    <a class="btn btn-square text-primary bg-white my-1" href=""><i class="fab fa-twitter"></i></a>
+                                    <a class="btn btn-square text-primary bg-white my-1" href=""><i class="fab fa-instagram"></i></a>
+                                    <a class="btn btn-square text-primary bg-white my-1" href=""><i class="fab fa-linkedin-in"></i></a>
+                                </div>
+                                <img class="img-fluid rounded w-100" src="img/team-3.jpg" alt="">
+                            </div>
+                            <div class="px-4 py-3">
+                                <h5 class="fw-bold m-0">Noah Michael</h5>
+                                <small>Designer</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Team End -->
+        
+
+        <!-- Footer Start -->
+        #<div class="container-fluid bg-light text-dark footer mt-5 pt-5 wow fadeIn" data-wow-delay="0.1s">
+<div class="container py-5 px-lg-5">
+    <div class="row g-5">
+        <div class="col-md-6 col-lg-3">
+            <h5 class="text-dark mb-4">Get In Touch</h5>
+            <p><i class="fa fa-map-marker-alt me-3"></i>Gorakhnath, Gorakhpur</p>
+            <p><i class="fa fa-phone-alt me-3"></i>+91-0000000000</p>
+            <p><i class="fa fa-envelope me-3"></i><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="bddcd9d0d4d3fddcd9d5dccfc8ded193dbc8d3">[email&#160;protected]</a></p>
+            <div class="d-flex pt-2">
+            <a class="btn btn-outline-danger btn-square me-3" href="#"><i class="fa-brands fa-whatsapp"></i></a>
+         <a class="btn btn-outline-info btn-square me-3" href="#"><i class="fab fa-facebook-f"></i></a>
+         <a class="btn btn-outline-success btn-square me-3" href="#"><i class="fab fa-instagram"></i></a>
+         <a class="btn btn-outline-primary btn-square" href="#"><i class="fab fa-twitter"></i></a>
+            </div>
+        </div>
+        <div class="col-md-6 col-lg-3">
+            <h5 class="text-dark mb-4">Popular Link</h5>
+            <a class="text-dark btn btn-link" href="index.php">About Us</a>
+            <a class="text-dark btn btn-link" href="contact.php">Contact Us</a>
+            <a class="text-dark btn btn-link" href="index.php">Privacy Policy</a>
+            <a class="text-dark btn btn-link" href="index.php">Terms & Condition</a>
+            <a class="text-dark btn btn-link" href="index.php">Career</a>
+        </div>
+      
+        <div class="col-md-6 col-lg-3">
+            <h5 class="text-dark mb-4">Newsletter</h5>
+            <p>Lorem ipsum dolor sit amet elit. Phasellus nec pretium mi. Curabitur facilisis ornare velit non vulpu</p>
+            <div class="position-relative w-100 mt-3">
+                <input class="form-control border-0 rounded-pill w-100 ps-4 pe-5" type="text" placeholder="Your Email" style="height: 48px;">
+                <button type="button" class="btn shadow-none position-absolute top-0 end-0 mt-1 me-2"><i class="fa fa-paper-plane text-primary fs-4"></i></button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container px-lg-5">
+    <div class="copyright">
+        <div class="row">
+            <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+            <strong>Copyright &copy; 2023 <a href="adharucl.fun">adhar ucl fun</a>.</strong>
+All rights reserved.
+                
+                
+                Designed By <a class="text-danger border-bottom" href="index.php">ITS NOT ME</a>
+                
+            </div>
+            <div class="col-md-6 text-center text-md-end">
+                <div class="footer-menu">
+                    <a href="index.php">Home</a>
+                    <a href="index.php">Cookies</a>
+                    <a href="index.php">Help</a>
+                    <a href="index.php">FQAs</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+<!-- Footer End -->
+
+
+<!-- Back to Top -->
+<a href="contact.php" class="btn btn-lg btn-primary btn-lg-square back-to-top pt-2"><i class="bi bi-arrow-up"></i></a>
+</div>
+
+<!-- JavaScript Libraries -->
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="lib/wow/wow.min.js"></script>
+<script src="lib/easing/easing.min.js"></script>
+<script src="lib/waypoints/waypoints.min.js"></script>
+<script src="lib/owlcarousel/owl.carousel.min.js"></script>
+<script src="lib/isotope/isotope.pkgd.min.js"></script>
+<script src="lib/lightbox/js/lightbox.min.js"></script>
+
+<!-- Template Javascript -->
+<script src="js/main.js"></script>
+</body>
+
+</html>
